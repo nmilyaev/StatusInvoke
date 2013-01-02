@@ -51,7 +51,30 @@
 			    </spring:bind>
 			</td>
 		</tr>
-		</c:forEach> --%>
-	</table>
+		</c:forEach> 
+	</table> --%>
+	
+	<!--  Un-comment to test me -->
+	<%-- <table>
+		<c:forEach var="user" items="${users}"  varStatus="status">
+		<tr>
+			<td>
+				<spring:bind path="${users[status.index]}.name">
+			    	<c:out value="${status.value}" />
+			    </spring:bind>
+			</td>
+			<td>
+				<spring:bind path="${users[status.index]}.date">
+			    	<c:out value="${status.value}" />
+			    </spring:bind>
+			</td>
+			<td>
+				<spring:bind path="${users[status.index]}.balance">
+			    	<c:out value="${status.value}" />
+			    </spring:bind>
+			</td>
+		</tr>
+		</c:forEach> 
+	</table> --%>
 </body>
 </html>
