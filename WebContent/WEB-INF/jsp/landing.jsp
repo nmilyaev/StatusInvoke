@@ -10,7 +10,7 @@
 <head>
 </head>
 <body>
-	Shows formatted Date and Currency using Annotation
+	<b>Shows formatted Date and Currency using Annotation</b>
 	<table>		
 		<c:forEach var="user" items="${users}"  varStatus="status">
 		<tr>
@@ -24,8 +24,45 @@
 			<td>
 				<spring:eval expression="user.balance" />
 			</td>
+			<td>
+				<spring:eval expression="user.type.description" /> 
+			</td>
 		</tr>
 		</c:forEach>
+	</table>
+	
+	<br/><br/><br/>
+	
+	<b>Load Users in Edit form and then try updating the values</b>
+	<table>
+		<form:form method="post" action="landing.htm" modelAttribute="userForm">
+		<c:forEach items="${userForm.users}"  varStatus="status">
+		<tr>
+			<td>
+				<form:input path="users[${status.index}].name"  size="10" />
+			</td>
+			<td>
+				<form:input path="users[${status.index}].date" size="30" />
+				<%-- <input name="user.date" value="${user.date}" size="30"/> --%>
+			</td>
+			<td>
+				<form:input path="users[${status.index}].balance"  size="5" />
+				<%-- <input name="user.balance" value="<spring:eval expression="user.balance" />" size="5"/> --%>
+			</td>
+			<td>
+				<form:select id="users[${status.index}].type" path="users[${status.index}].type" > 
+					<form:option value="NONE" label="--- Select ---"/>
+					<form:options itemValue="name" itemLabel="description" />
+				</form:select>
+			</td>
+		</tr>
+		</c:forEach>
+		<tr>
+			<td colspan="3">
+				<input type="submit" value="Submit Me" name="submit"/>
+			</td>
+		</tr>
+		</form:form>
 	</table>
 </body>
 </html>
