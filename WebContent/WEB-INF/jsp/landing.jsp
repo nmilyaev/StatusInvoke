@@ -50,7 +50,7 @@
 				<%-- <input name="user.balance" value="<spring:eval expression="user.balance" />" size="5"/> --%>
 			</td>
 			<td>
-				<form:select id="users[${status.index}].type" path="users[${status.index}].type" > 
+				<form:select path="users[${status.index}].type" > 
 					<form:option value="NONE" label="--- Select ---"/>
 					<form:options itemValue="name" itemLabel="description" />
 				</form:select>
