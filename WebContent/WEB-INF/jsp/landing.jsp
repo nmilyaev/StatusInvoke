@@ -11,8 +11,7 @@
 </head>
 <body>
 	Shows formatted Date and Currency using Annotation
-	<table>
-		<form:form commandName="myForm">
+	<table>		
 		<c:forEach var="user" items="${users}"  varStatus="status">
 		<tr>
 			<td>
@@ -27,7 +26,6 @@
 			</td>
 		</tr>
 		</c:forEach>
-		</form:form> 
 	</table>
 </body>
 </html>
