@@ -17,8 +17,7 @@ public class UserController {
 	public ModelAndView loadForm() {
 		
 		ModelAndView modelAndView = new ModelAndView("landing");
-		List<UserEntity> users = populate();
-		modelAndView.addObject("users", users);
+		modelAndView.addObject("users", populate());
 		
 		return modelAndView;
 	}

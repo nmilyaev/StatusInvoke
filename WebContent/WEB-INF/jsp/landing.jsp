@@ -11,70 +11,23 @@
 </head>
 <body>
 	Hello
-	
 	<table>
+		<form:form commandName="myForm">
 		<c:forEach var="user" items="${users}"  varStatus="status">
 		<tr>
-			<td style="padding:3px;">
-				${status.count} 
+			<td>
+				<spring:eval expression="user.name" />
 			</td>
 			<td>
-				${user.name}
-			</td>
-			<td>
+				<!-- spring:eval not needed here as it does not invoke the binding -->
 				${user.date}
 			</td>
 			<td>
-				${user.balance}
+				<spring:eval expression="user.balance" />
 			</td>
 		</tr>
 		</c:forEach>
+		</form:form> 
 	</table>
-	
-	<!--  Un-comment to test me -->
-	<%-- <table>
-		<c:forEach var="user" items="${users}"  varStatus="status">
-		<tr>
-			<td>
-				<spring:bind path="user.name">
-			    	<c:out value="${status.value}" />
-			    </spring:bind>
-			</td>
-			<td>
-				<spring:bind path="user.date">
-			    	<c:out value="${status.value}" />
-			    </spring:bind>
-			</td>
-			<td>
-				<spring:bind path="user.balance">
-			    	<c:out value="${status.value}" />
-			    </spring:bind>
-			</td>
-		</tr>
-		</c:forEach> 
-	</table> --%>
-	
-	<!--  Un-comment to test me -->
-	<%-- <table>
-		<c:forEach var="user" items="${users}"  varStatus="status">
-		<tr>
-			<td>
-				<spring:bind path="${users[status.index]}.name">
-			    	<c:out value="${status.value}" />
-			    </spring:bind>
-			</td>
-			<td>
-				<spring:bind path="${users[status.index]}.date">
-			    	<c:out value="${status.value}" />
-			    </spring:bind>
-			</td>
-			<td>
-				<spring:bind path="${users[status.index]}.balance">
-			    	<c:out value="${status.value}" />
-			    </spring:bind>
-			</td>
-		</tr>
-		</c:forEach> 
-	</table> --%>
 </body>
 </html>

@@ -39,6 +39,7 @@ public class UserEntity {
 		this.name = name;
 	}
 
+	@DateTimeFormat(iso = ISO.NONE)
 	public Date getDate() {
 		return date;
 	}
@@ -54,7 +55,4 @@ public class UserEntity {
 	public void setBalance(Double balance) {
 		this.balance = balance;
 	}
-	
-	
-
 }
