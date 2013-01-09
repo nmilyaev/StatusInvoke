@@ -10,7 +10,7 @@
 <head>
 </head>
 <body>
-	Hello
+	Shows formatted Date and Currency using Annotation
 	<table>
 		<form:form commandName="myForm">
 		<c:forEach var="user" items="${users}"  varStatus="status">
