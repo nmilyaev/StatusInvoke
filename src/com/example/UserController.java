@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 public class UserController {
 	private final Log log = LogFactory.getLog(getClass());
 	
-	/** Works find if I populate using this method */
+	/** Works if I populate using this method */
 //	@ModelAttribute("userForm") 
 //    public UserForm setupForm() {
 //		UserForm userForm = new UserForm();
