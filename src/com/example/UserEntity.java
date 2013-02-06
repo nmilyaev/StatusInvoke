@@ -24,6 +24,11 @@ public class UserEntity {
 	private Double balance;	
 	
 	private UserType type;
+	
+	/** To make bean happy */
+	public UserEntity() {
+		
+	}
 
 	public UserEntity(String name, DateTime date, Double balance, UserType type) {
 		super();

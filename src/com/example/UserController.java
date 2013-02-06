@@ -18,30 +18,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 public class UserController {
 	private final Log log = LogFactory.getLog(getClass());
 	
-	/** Works if I populate using this method */
-//	@ModelAttribute("userForm") 
-//    public UserForm setupForm() {
-//		UserForm userForm = new UserForm();
-//		userForm.setUsers(populate());
-//      return userForm;
-//    }
-	
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView loadForm(@ModelAttribute("userForm") UserForm userForm) {		
 		ModelAndView modelAndView = new ModelAndView("landing");
 		modelAndView.addObject("users", populate());	
-		userForm.setUsers(populate());
-		
-//		UserForm userForm = new UserForm();
-//		userForm.setUsers(populate());
-//		modelAndView.addObject("userForm", userForm);
-		
+		userForm.setUsers(populate());		
 		return modelAndView;
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView post(@ModelAttribute("userForm") UserForm userForm) {
-		log.info("called post");
+		log.info("called post... view will not show anything");
 		for(UserEntity user : userForm.getUsers()) {
 			log.info(user);
 		}
