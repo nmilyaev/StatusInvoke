@@ -31,10 +31,10 @@ public class UserController {
 	@RequestMapping(value = "/find_user", method = RequestMethod.GET)
 	public @ResponseBody List<String> findUser(@RequestParam("term") String name) {
 		log.info("Search string for user name: " + name);	
-		List<String> yo = new ArrayList<String>();
-		yo.add("hello");
-		yo.add("bye");
-		return yo;
+		List<String> users = new ArrayList<String>();
+		users.add("Sam");
+		users.add("Dan");
+		return users;
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
