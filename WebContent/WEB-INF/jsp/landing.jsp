@@ -8,6 +8,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<link rel='stylesheet' type='text/css' href='./css/smoothness/jquery-ui-1.9.2.custom.css'>
+	<script type="text/javascript" src="./css/js/jquery-1.8.3.js"></script>
+	<script type="text/javascript" src="./css/js/jquery-ui-1.9.2.custom.js"></script>
+
+	<script type="text/javascript">
+	function split(val) {
+	    return val.split(/,\s*/);
+	}
+	function extractLast(term) {
+	    return split(term).pop();
+	}
+	 
+	$(document).ready(function() {
+	 
+	    $( "#name" ).autocomplete({
+	        source: "${pageContext. request. contextPath}/landing/find_user.htm"
+	        /* source : ["Alex,Agnes,Alan,Bjok,Bill,John,Jason,Maria,Man"] */
+	    });
+	    
+	});
+</script>
 </head>
 <body>
 	<b>Shows formatted Date and Currency using Annotation</b>
@@ -64,5 +85,34 @@
 		</tr>
 		</form:form>
 	</table>
+	
+	
+	<br/><br/><br/>
+	
+	<b>Ajax + JSON [jars included - jackson-mapper-asl-1.9.2 and jackson-core-asl-1.9.12]</b>
+	<form:form method="post" modelAttribute="userForm" action="landing.htm">
+	<table>
+	    <tr>
+	        <th>Name</th>
+	        <td><form:input path="name" id="name"/></td>
+	    </tr>
+	    <tr>
+	    	<td colspan="2"><br /> </td>
+	    </tr>
+	    <tr>
+	    	<td colspan="2"><br /> </td>
+	    </tr>
+	    <tr>
+	    	<td colspan="2"><br /> </td>
+	    </tr>
+	    <tr>
+	        <td colspan="2">
+	            <input type="submit" value="Save" />
+	            <input type="reset" value="Reset" />
+	        </td>
+	    </tr>
+	</table>     
+	</form:form>
+
 </body>
 </html>

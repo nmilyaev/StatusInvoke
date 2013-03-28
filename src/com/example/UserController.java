@@ -9,6 +9,8 @@ import org.joda.time.DateTime;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -24,6 +26,15 @@ public class UserController {
 		modelAndView.addObject("users", populate());	
 		userForm.setUsers(populate());		
 		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/find_user", method = RequestMethod.GET)
+	public @ResponseBody List<String> findUser(@RequestParam("term") String name) {
+		log.info("Search string for user name: " + name);	
+		List<String> yo = new ArrayList<String>();
+		yo.add("hello");
+		yo.add("bye");
+		return yo;
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)

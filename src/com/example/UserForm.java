@@ -5,7 +5,8 @@ import java.util.List;
 
 public class UserForm {
 	
-	List<UserEntity> users = new ArrayList<UserEntity>();
+	private List<UserEntity> users = new ArrayList<UserEntity>();
+	private String name;
 
 	public List<UserEntity> getUsers() {
 		return users;
@@ -13,5 +14,13 @@ public class UserForm {
 
 	public void setUsers(List<UserEntity> users) {
 		this.users = users;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
 	}
 }
