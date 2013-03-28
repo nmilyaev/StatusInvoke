@@ -89,7 +89,7 @@
 	
 	<br/><br/><br/>
 	
-	<b>Ajax + JSON [jars included - jackson-mapper-asl-1.9.2 and jackson-core-asl-1.9.12]</b>
+	<b>Ajax + JSON example</b>
 	<form:form method="post" modelAttribute="userForm" action="landing.htm">
 	<table>
 	    <tr>
